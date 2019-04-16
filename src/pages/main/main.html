@@ -39,23 +39,15 @@
 </ion-list>
 <ion-list>
     <ion-item>
-        <ion-label fixed>Rua</ion-label>
-        <ion-input type="text" [(ngModel)]="rua" value=""></ion-input>
+        <ion-label fixed>Id usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="idUsuario" value=""></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label fixed>Número</ion-label>
-        <ion-input type="text" [(ngModel)]="numero" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label fixed>complemento</ion-label>
-        <ion-input type="text" [(ngModel)]="complemento" value=""></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label fixed>Referencia</ion-label>
-        <ion-input type="text" [(ngModel)]="referencia" value=""></ion-input>
+        <ion-label fixed>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="NomeUsuario" value=""></ion-input>
     </ion-item>
   </ion-list>
-
+  <button ion-button expand="block" (click)="enviarUsuario()">Enviar</button>
   <button ion-button expand="block" (click)="limpaCampos()">Limpar</button>
     <!-- <ion-list>
       <ion-item *ngFor="let sabor of listaSabores">{{ sabor.sabor }}

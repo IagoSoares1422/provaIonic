@@ -20,9 +20,8 @@ export class LogonProvider {
       userName : username,
       password : password
     }
-      this.http.url = 'http://104.196.102.231/logon'
+      this.http.url = 'http://localhost:3000/logon'
     return this.http.post(obj);
 
   }
-
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TamanhoProvider } from '../../providers/tamanho/tamanho';
 import { SaboresProvider } from '../../providers/sabores/sabores';
+import { LogonProvider } from '../../providers/logon/logon';
+import { UsuarioPage } from '../usuario/usuario';
 
 /**
  * Generated class for the MainPage page.
@@ -29,7 +31,10 @@ export class MainPage {
   public complemento:string;
   public referencia:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private tamanho : TamanhoProvider, private sabor : SaboresProvider, private cidade : TamanhoProvider, private bairro : SaboresProvider) {
+  idUsuario : string;
+  NomeUsuario : string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private usuario : UsuarioPage, logon: LogonProvider, private tamanho : TamanhoProvider, private sabor : SaboresProvider, private cidade : TamanhoProvider, private bairro : SaboresProvider) {
   }
 
   onChange(){
@@ -71,6 +76,14 @@ export class MainPage {
     this.numero = '';
     this.complemento = '';
     this.referencia = '';
+  }
+
+  enviarUsuario() {
+    this.logon.usuario(this.idUsuario, this.NomeUsuario).subscribe(
+      (data : any) => {
+        this.navCtrl.push(MainPage)
+      }
+    )
   }
 
 }
